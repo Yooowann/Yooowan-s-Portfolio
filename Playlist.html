@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musicify</title>
+
+    <style>
+        body{
+            margin:0;
+            font-family:Arial, sans-serif;
+            background:#121212;
+            color:white;
+            text-align:center;
+        }
+
+        h1{
+            color:#1DB954;
+            font-size:42px;
+            margin-top:25px;
+            margin-bottom:5px;
+        }
+
+        h6{
+            color:#b3b3b3;
+            margin-top:0;
+            margin-bottom:30px;
+            font-size:16px;
+        }
+
+        .playlist{
+            width:90%;
+            max-width:1100px;
+            margin:0 auto 40px;
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+            gap:25px;
+        }
+
+        .song{
+            background:#1e1e1e;
+            border-radius:15px;
+            padding:20px;
+            box-shadow:0 5px 15px rgba(0,0,0,.4);
+            transition:.3s;
+        }
+
+        .song:hover{
+            transform:translateY(-8px);
+            box-shadow:0 10px 25px rgba(29,185,84,.4);
+        }
+
+        .song img{
+            width:180px;
+            height:180px;
+            object-fit:cover;
+            border-radius:12px;
+            margin-bottom:15px;
+        }
+
+        .song p{
+            font-size:18px;
+            font-weight:bold;
+            margin-bottom:15px;
+        }
+
+        audio{
+            width:100%;
+        }
+
+        @media(max-width:768px){
+
+            h1{
+                font-size:32px;
+            }
+
+            .song img{
+                width:150px;
+                height:150px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Musicify</h1>
+<h6>Created by Yuwan Raymundo</h6>
+
+<div class="playlist">
+
+    <div class="song">
+        <p>December Avenue - Sleep Tonight</p>
+        <img src="images/sleep.jpg" alt="Sleep Tonight">
+        <audio controls>
+            <source src="mp3/sleep.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <div class="song">
+        <p>December Avenue - Bulong</p>
+        <img src="images/bulong.jfif" alt="Bulong">
+        <audio controls>
+            <source src="mp3/bulong.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <div class="song">
+        <p>Green Day - Basket Case</p>
+        <img src="images/dookie.jpg" alt="Basket Case">
+        <audio controls>
+            <source src="mp3/basket.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <div class="song">
+        <p>Green Day - American Idiot</p>
+        <img src="images/american.png" alt="American Idiot">
+        <audio controls>
+            <source src="mp3/american.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <div class="song">
+        <p>Nirvana - Smells Like Teen Spirit</p>
+        <img src="images/nirvana.jfif" alt="Smells Like Teen Spirit">
+        <audio controls>
+            <source src="mp3/smells.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <div class="song">
+        <p>Goo Goo Dolls - Iris</p>
+        <img src="images/iris.jfif" alt="Iris">
+        <audio controls>
+            <source src="mp3/iris.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+</div>
+
+</body>
+</html>

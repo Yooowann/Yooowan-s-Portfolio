@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Yuwan's Bistro</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+
+            font-family: "Segoe UI", Arial, sans-serif;
+
+            color: #f5f5f5;
+
+            background:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.72),
+                    rgba(0, 0, 0, 0.82)
+                ),
+                url("images/bistro.jpg");
+
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+
+            padding: 50px 20px;
+        }
+
+        .restaurant {
+            width: 850px;
+            max-width: 95%;
+
+            margin: auto;
+
+            padding: 55px;
+
+            background: rgba(18, 18, 18, 0.94);
+
+            border: 1px solid #3a3a3a;
+
+            border-radius: 10px;
+
+            box-shadow:
+                0 30px 80px rgba(0, 0, 0, 0.8),
+                0 0 40px rgba(201, 162, 39, 0.05);
+
+            position: relative;
+        }
+
+        .restaurant::before {
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            width: 140px;
+            height: 3px;
+
+            background: #c9a227;
+        }
+
+        .header {
+            text-align: center;
+
+            margin-bottom: 45px;
+        }
+
+        .small-title {
+            color: #c9a227;
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            margin: 0;
+
+            color: #ffffff;
+
+            font-family: Georgia, "Times New Roman", serif;
+
+            font-size: clamp(38px, 6vw, 58px);
+
+            font-weight: 500;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            margin-top: 12px;
+
+            color: #999;
+
+            font-family: Georgia, "Times New Roman", serif;
+
+            font-size: 16px;
+
+            font-style: italic;
+        }
+
+        .title-line {
+            width: 55px;
+
+            height: 1px;
+
+            margin: 22px auto 0;
+
+            background: #c9a227;
+        }
+
+        .menu {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 25px;
+        }
+
+        .category {
+            background: #101010;
+
+            border: 1px solid #2d2d2d;
+
+            border-radius: 7px;
+
+            padding: 28px;
+
+            transition:
+                transform 0.3s ease,
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .category:hover {
+            transform: translateY(-5px);
+
+            border-color: #c9a227;
+
+            box-shadow:
+                0 15px 35px rgba(0, 0, 0, 0.5),
+                0 0 20px rgba(201, 162, 39, 0.07);
+        }
+
+        .category-title {
+            margin: 0 0 20px;
+
+            color: #c9a227;
+
+            font-family: Georgia, "Times New Roman", serif;
+
+            font-size: 24px;
+
+            font-weight: 500;
+
+            text-align: center;
+        }
+
+        .category-line {
+            width: 35px;
+
+            height: 1px;
+
+            background: #c9a227;
+
+            margin: 0 auto 20px;
+        }
+
+        .item {
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 20px;
+
+            padding: 15px 0;
+
+            border-bottom: 1px solid #292929;
+
+            color: #ddd;
+
+            font-size: 15px;
+
+            transition:
+                color 0.3s ease,
+                padding 0.3s ease;
+        }
+
+        .item:last-child {
+            border-bottom: none;
+
+            padding-bottom: 0;
+        }
+
+        .item:hover {
+            color: #ffffff;
+
+            padding-left: 5px;
+        }
+
+        .price {
+            color: #c9a227;
+
+            font-weight: 600;
+
+            white-space: nowrap;
+        }
+
+        .description {
+            display: block;
+
+            margin-top: 5px;
+
+            color: #777;
+
+            font-size: 11px;
+
+            line-height: 1.5;
+        }
+
+        .footer {
+            margin-top: 45px;
+
+            padding-top: 25px;
+
+            border-top: 1px solid #333;
+
+            text-align: center;
+
+            color: #777;
+
+            font-size: 11px;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+        }
+
+        .footer span {
+            color: #c9a227;
+        }
+
+        @media (max-width: 700px) {
+
+            body {
+                padding: 30px 15px;
+            }
+
+            .restaurant {
+                padding: 40px 25px;
+            }
+
+            .menu {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+        @media (max-width: 450px) {
+
+            .restaurant {
+                padding: 35px 18px;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            .category {
+                padding: 22px;
+            }
+
+            .item {
+                font-size: 14px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <main class="restaurant">
+
+        <header class="header">
+
+            <div class="small-title">
+                Welcome To
+            </div>
+
+            <h1>
+                Yuwan's Bistro
+            </h1>
+
+            <div class="subtitle">
+                Good Food • Good Mood • Good Memories
+            </div>
+
+            <div class="title-line"></div>
+
+        </header>
+
+        <section class="menu">
+
+            <div class="category">
+
+                <h2 class="category-title">
+                    Appetizers
+                </h2>
+
+                <div class="category-line"></div>
+
+                <div class="item">
+                    <span>
+                        Lumpiang Shanghai
+                        <span class="description">
+                            Crispy Filipino spring rolls
+                        </span>
+                    </span>
+
+                    <span class="price">
+                        ₱100.00
+                    </span>
+                </div>
+
+                <div class="item">
+                    <span>
+                        Siomai
+                        <span class="description">
+                            Steamed savory dumplings
+                        </span>
+                    </span>
+
+                    <span class="price">
+                        ₱50.00
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div class="category">
+
+                <h2 class="category-title">
+                    Main Course
+                </h2>
+
+                <div class="category-line"></div>
+
+                <div class="item">
+                    <span>
+                        Roast Beef
+                        <span class="description">
+                            Tender roasted beef
+                        </span>
+                    </span>
+
+                    <span class="price">
+                        ₱170.00
+                    </span>
+                </div>
+
+                <div class="item">
+                    <span>
+                        Beef Steak
+                        <span class="description">
+                            Juicy grilled beef steak
+                        </span>
+                    </span>
+
+                    <span class="price">
+                        ₱180.00
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div class="category">
+
+                <h2 class="category-title">
+                    Drinks
+                </h2>
+
+                <div class="category-line"></div>
+
+                <div class="item">
+                    <span>
+                        Iced Tea
+                        <span class="description">
+                            Refreshing chilled tea
+                        </span>
+                    </span>
+
+                    <span class="price">
+                        ₱80.00
+                    </span>
+                </div>
+
+                <div class="item">
+                    <span>
+                        Coffee
+                        <span class="description">
+                            Freshly brewed coffee
+                        </span>
+                    </span>
+
+                    <span class="price">
+                        ₱90.00
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div class="category">
+
+                <h2 class="category-title">
+                    Desserts
+                </h2>
+
+                <div class="category-line"></div>
+
+                <div class="item">
+                    <span>
+                        Ice Cream
+                        <span class="description">
+                            Creamy and refreshing
+                        </span>
+                    </span>
+
+                    <span class="price">
+                        ₱120.00
+                    </span>
+                </div>
+
+                <div class="item">
+                    <span>
+                        Halo-Halo
+                        <span class="description">
+                            Classic Filipino shaved ice dessert
+                        </span>
+                    </span>
+
+                    <span class="price">
+                        ₱145.00
+                    </span>
+                </div>
+
+            </div>
+
+        </section>
+
+        <footer class="footer">
+            Yuwan's Bistro <span>•</span> Since 2026
+        </footer>
+
+    </main>
+
+</body>
+
+</html>

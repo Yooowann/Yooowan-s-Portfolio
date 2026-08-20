@@ -787,8 +787,8 @@ strong {
         transform: translateX(0);
     }
 }
-
 @media (max-width: 850px) {
+
     .nav-container {
         flex-direction: column;
         gap: 15px;
@@ -915,6 +915,7 @@ strong {
         margin: 30px auto;
         padding: 40px 20px;
         border-radius: 5px;
+        box-sizing: border-box;
     }
 
     .subtitle {
@@ -945,6 +946,7 @@ strong {
 
     .statement {
         font-size: 15px;
+        line-height: 1.7;
     }
 
     .technical-grid,
@@ -956,12 +958,74 @@ strong {
         font-size: 21px;
     }
 
+    .projects {
+        padding: 35px 15px;
+        margin: 25px auto;
+    }
+
+    .projects .header {
+        margin-bottom: 30px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .project-card {
+        width: 100%;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
     .project-content {
-        padding: 22px;
+        padding: 24px 20px;
+    }
+
+    .project-number {
+        font-size: 11px;
+        letter-spacing: 2px;
+        margin-bottom: 10px;
     }
 
     .project-title {
-        font-size: 21px;
+        font-size: 23px;
+        margin-bottom: 12px;
+    }
+
+    .project-description {
+        font-size: 14px;
+        line-height: 1.7;
+        margin-bottom: 20px;
+    }
+
+    .technologies {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+        margin-bottom: 22px;
+    }
+
+    .technology {
+        font-size: 11px;
+        padding: 6px 10px;
+    }
+
+    .project-link {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 11px 15px;
+        box-sizing: border-box;
+    }
+
+    .statement {
+        margin-top: 30px;
+    }
+
+    .statement span {
+        display: block;
+        margin-top: 10px;
     }
 
     .contact-card {
